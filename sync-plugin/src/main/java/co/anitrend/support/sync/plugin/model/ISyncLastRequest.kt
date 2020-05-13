@@ -9,12 +9,12 @@ package co.anitrend.support.sync.plugin.model
  */
 interface ISyncLastRequest<E> {
     val id: Long
-    val entityId: E?
+    val entityId: E
     val lastExecutedOn: Long
 
     /**
      * Checks if the [lastExecutedOn] has elapsed a certain duration if so then
      * true is returned, otherwise false
      */
-    fun hasExpired(lastRequestI: ISyncLastRequest<E>): Boolean
+    fun hasExpired(lastRequest: ISyncLastRequest<E>): Boolean
 }

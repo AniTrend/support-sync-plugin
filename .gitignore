@@ -138,3 +138,5 @@ secrets.properties
 
 # Google services local configuration
 app/google-services.json
+
+github.properties

@@ -1,1 +1,1 @@
-include ':syncplugin'
+include ':sync-plugin'

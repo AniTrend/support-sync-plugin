@@ -1,25 +1,22 @@
-plugins {
-    id("com.android.library")
-    id("kotlin-android")
-    id("kotlin-kapt")
-    id("kotlin-android-extensions")
-}
-
-android {
+ android {
     compileSdkVersion compileSdk
     defaultConfig {
         minSdkVersion minSdk
         targetSdkVersion targetSdk
-        versionCode versionCode
-        versionName versionName
+        versionCode rootProject.versionCode
+        versionName rootProject.versionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-
     buildTypes {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+        test.java.srcDirs += 'src/test/kotlin'
+        androidTest.java.srcDirs += 'src/androidTest/kotlin'
     }
     testOptions {
         unitTests.returnDefaultValues = true
@@ -30,7 +27,12 @@ android {
     }
     kotlinOptions {
         jvmTarget = "1.8"
+        freeCompilerArgs += [ "-Xuse-experimental=kotlin.Experimental" ]
     }
+}
+
+androidExtensions {
+    experimental = true
 }
 
 dependencies {
@@ -40,10 +42,10 @@ dependencies {
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesCore"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesAndroid"
-
+    
     /** Timber */
     implementation "com.jakewharton.timber:timber:$timber"
-
+    
     /** Testing-only dependencies */
     testImplementation "junit:junit:$junit"
     testImplementation "io.mockk:mockk:$mockk"
