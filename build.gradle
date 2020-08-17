@@ -8,7 +8,7 @@ buildscript {
         versionName = '0.1.0-alpha01'
 
         koin = '2.0.1'
-        kotlinVersion = '1.3.72'
+        kotlinVersion = '1.4.0'
 
         mockk = '1.10.0'
         junit = '4.13'
