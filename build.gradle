@@ -4,8 +4,8 @@ buildscript {
     apply from: "./gradle/gradle-ext-versions.gradle"
 
     ext {
-        versionCode = 1
-        versionName = '0.1.0-alpha01'
+        versionCode = 1002
+        versionName = '0.1.0-alpha02'
 
         koin = '2.0.1'
         kotlinVersion = '1.4.30'
@@ -13,10 +13,6 @@ buildscript {
         mockk = '1.10.0'
         junit = '4.13'
         runner = '1.2.0'
-        espresso = '3.2.0'
-
-        coroutinesCore = '1.2.2'
-        coroutinesAndroid = '1.2.2'
 
         timber = '4.7.1'
     }
