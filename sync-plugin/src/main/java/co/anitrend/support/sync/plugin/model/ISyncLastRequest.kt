@@ -16,5 +16,5 @@ interface ISyncLastRequest<E> {
      * Checks if the [lastExecutedOn] has elapsed a certain duration if so then
      * true is returned, otherwise false
      */
-    fun hasExpired(lastRequest: ISyncLastRequest<E>): Boolean
+    fun ISyncLastRequest<E>.hasExpired(): Boolean
 }
